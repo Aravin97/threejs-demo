@@ -8,9 +8,11 @@
 const THREE = require("three");
 
 function createRenderer() {
+    let rendered = new THREE.WebGLRenderer({})
   let renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor("#16161d"); // Eigengrau
+  renderer.setPixelRatio
   let output = document.querySelector("#output");
   output.appendChild(renderer.domElement);
   return renderer;
