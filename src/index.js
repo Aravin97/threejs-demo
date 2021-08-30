@@ -6,6 +6,7 @@
 // - Lights
 
 const THREE = require("three");
+const orbit = require("three-orbitcontrols");
 
 function createRenderer() {
   let renderer = new THREE.WebGLRenderer({
@@ -100,6 +101,8 @@ let sphere = createSphere();
 let light = createLight();
 let lightHelper = createLightHelper(light);
 
+let controls = new orbit(camera, renderer.domElement);
+
 light.position.x = 10;
 light.position.y = 10;
 light.position.z = 10;
@@ -107,7 +110,7 @@ light.position.z = 10;
 sphere.position.x = 20;
 
 let cubes = [];
-let cubeCount = 500;
+let cubeCount = 400;
 
 for (let i = 1; i <= cubeCount; i += 1) {
   let c = createCube();
